@@ -32,14 +32,6 @@ async function manipularSubmissaoFormulario(event){
     }
 }
 
-cancelarBt.addEventListener('click',()=>{
-    const conteudo = document.getElementById('pensamento-conteudo')
-    const autoria = document.getElementById('pensamento-autoria')
-    conteudo.value = ''
-    autoria.value = ''
-
-})
-
 function manipularCancelamento(){
     ui.limparFormulario();
 }
