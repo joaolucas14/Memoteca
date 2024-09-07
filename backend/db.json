@@ -11,11 +11,6 @@
       "autoria": "Mestre Yoda"
     },
     {
-      "id": "5b8a",
-      "conteudo": "Na minha máquina funciona!",
-      "autoria": "Dev"
-    },
-    {
       "id": "68uy",
       "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
       "autoria": "Chaves"
@@ -69,16 +64,6 @@
       "id": "ded1",
       "conteudo": "Na minha máquina funciona",
       "autoria": "Dev"
-    },
-    {
-      "id": "eee0",
-      "conteudo": "Só sei que nada sei",
-      "autoria": "Sócrates"
-    },
-    {
-      "id": "149a",
-      "conteudo": "          tesfsd",
-      "autoria": "sdsdsd"
     }
   ]
 }
