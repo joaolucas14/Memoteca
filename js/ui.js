@@ -49,7 +49,11 @@ const ui = {
 
         const botaoEditar = document.createElement("button")
         botaoEditar.classList.add("botao-editar")
-        botaoEditar.onclick = () => ui.preecherFormulario(pensamento.id)
+        // botaoEditar.onclick = () => ui.preecherFormulario(pensamento.id)
+        botaoEditar.addEventListener('click', ()=>{
+            ui.preecherFormulario(pensamento.id)
+            document.getElementById("pensamento-form").scrollIntoView({ behavior: "smooth" })
+        })
 
         const iconeEditar = document.createElement("img")
         iconeEditar.src = "assets/imagens/icone-editar.png"
