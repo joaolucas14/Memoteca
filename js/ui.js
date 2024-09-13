@@ -7,19 +7,26 @@ const ui = {
     document.getElementById("pensamento-conteudo").value = pensamento.conteudo;
     document.getElementById("pensamento-autoria").value = pensamento.autoria;
   },
-  async renderizarPensamentos() {
+  async renderizarPensamentos(pensamentosFiltrados = null) {
     const listaPensamentos = document.getElementById("lista-pensamentos");
     const mensagemVazia = document.getElementById("mensagem-vazia");
     listaPensamentos.innerHTML = "";
 
     try {
-      const pensamentos = await api.buscarPensamentos();
-      pensamentos.forEach(ui.adicionarPensamentoNaLista);
-      if (pensamentos.length === 0) {
+      let pensamentosParaRenderizar;
+
+      if (pensamentosFiltrados) {
+        pensamentosParaRenderizar = pensamentosFiltrados;
+      } else {
+        pensamentosParaRenderizar = await api.buscarPensamentos();
+      }
+
+      pensamentosParaRenderizar.forEach(ui.adicionarPensamentoNaLista);
+      if (pensamentosParaRenderizar.length === 0) {
         mensagemVazia.style.display = "block";
       } else {
         mensagemVazia.style.display = "none";
-        pensamentos.forEach(ui.adicionarPensamentoNaLista);
+        pensamentosParaRenderizar.forEach(ui.adicionarPensamentoNaLista);
       }
     } catch {
       alert("Erro ao renderizar pensamentos ");
