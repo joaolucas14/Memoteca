@@ -7,6 +7,7 @@ const ui = {
     document.getElementById("pensamento-conteudo").value = pensamento.conteudo;
     document.getElementById("pensamento-autoria").value = pensamento.autoria;
   },
+
   async renderizarPensamentos(pensamentosFiltrados = null) {
     const listaPensamentos = document.getElementById("lista-pensamentos");
     const mensagemVazia = document.getElementById("mensagem-vazia");
@@ -71,6 +72,14 @@ const ui = {
     const botaoExcluir = document.createElement("button");
     botaoExcluir.classList.add("botao-excluir");
 
+    const botaoFavorito = document.createElement("button");
+    botaoFavorito.classList.add("botao-favorito");
+
+    const iconeFavorito = document.createElement("img");
+    iconeFavorito.src = "assets/imagens/icone-favorito_outline.png";
+    iconeFavorito.alt = "Ícone favorito";
+    botaoFavorito.appendChild(iconeFavorito);
+
     botaoExcluir.onclick = async () => {
       try {
         await api.excluirPensamento(pensamento.id);
@@ -88,6 +97,7 @@ const ui = {
 
     const icones = document.createElement("div");
     icones.classList.add("icones");
+    icones.appendChild(botaoFavorito);
     icones.appendChild(botaoEditar);
     icones.appendChild(botaoExcluir);
 
