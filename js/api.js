@@ -31,14 +31,6 @@ const api = {
         data: data.toISOString(),
       });
       return await response.data;
-      // const response = await fetch(`${URL_BASE}/pensamentos`, {
-      //     method: "POST",
-      //     headers: {
-      //         "Content-Type": "application/json"
-      //     },
-      //     body: JSON.stringify(pensamento)
-      // })
-      // return await response.json()
     } catch (error) {
       alert("Erro ao buscar pensamentos");
       throw error;
@@ -66,14 +58,6 @@ const api = {
         pensamento
       );
       return await response.data;
-      // const response = await fetch(`${URL_BASE}/pensamentos/${pensamento.id}`, {
-      //     method: "PUT",
-      //     headers: {
-      //         "Content-Type": "application/json"
-      //     },
-      //     body: JSON.stringify(pensamento)
-      // })
-      // return await response.json()
     } catch (error) {
       alert("Erro ao editar pensamentos");
       throw error;
@@ -82,9 +66,6 @@ const api = {
   async excluirPensamento(id) {
     try {
       const response = await axios.delete(`${URL_BASE}/pensamentos/${id}`);
-      // const response = await fetch(`${URL_BASE}/pensamentos/${id}`, {
-      //     method: "DELETE",
-      // })
     } catch (error) {
       alert("Erro ao excluir um pensamento");
       throw error;
